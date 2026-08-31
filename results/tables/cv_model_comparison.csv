@@ -1,0 +1,4 @@
+model,pr_auc_cv,mean
+random_forest,0.891 ± 0.012,0.8905814406269577
+xgboost,0.870 ± 0.014,0.8700570438099973
+logistic_regression,0.459 ± 0.020,0.45913466770799666

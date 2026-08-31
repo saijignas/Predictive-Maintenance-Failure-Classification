@@ -1,0 +1,2 @@
+top5_features=['power_w', 'rotational_speed', 'tool_wear', 'torque', 'wear_torque']
+mechanism_features_in_top5=['power_w', 'wear_torque']
