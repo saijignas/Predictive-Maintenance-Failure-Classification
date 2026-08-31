@@ -1,5 +1,7 @@
 # Predictive Maintenance — Cost-Sensitive Machine Failure Classification
 
+**[Live demo](https://predictive-maintenance-failure-9t6z.onrender.com)** — enter machine readings, get the failure probability, the recommendation at both thresholds, and a per-prediction SHAP explanation. (Render free tier — first load can take ~30-60s to wake up.)
+
 Predicts machine failure on a real industrial predictive-maintenance
 benchmark dataset, then answers the question that actually matters
 operationally: not "what's the most accurate model?" but "at what
@@ -177,11 +179,15 @@ python src/eda.py
 python src/modeling.py
 python src/cost_sensitive.py
 python src/explainability.py
+
+# live demo, locally:
+streamlit run app.py
 ```
 
 ## Files
 
 ```
+app.py                 # Streamlit live demo (deployed on Render)
 src/
   features.py        # domain-informed feature engineering, leakage-column list
   utils.py            # t-based confidence intervals for CV scores
