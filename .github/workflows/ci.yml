@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # No pytest suite here -- this is an analysis pipeline, not a
+      # library. CI instead smoke-tests that every stage still runs
+      # end-to-end against the committed dataset without erroring, which
+      # is what would actually break on a dependency bump or a refactor.
+      - name: Run the full pipeline against the committed dataset
+        run: |
+          python src/eda.py
+          python src/modeling.py
+          python src/cost_sensitive.py
+          python src/explainability.py
