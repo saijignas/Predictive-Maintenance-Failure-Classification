@@ -1,4 +1,5 @@
 # Predictive Maintenance — Cost-Sensitive Machine Failure Classification
+![CI](https://github.com/saijignas/Predictive-Maintenance-Failure-Classification/actions/workflows/ci.yml/badge.svg)
 
 **[Live demo](https://predictive-maintenance-failure-9t6z.onrender.com)** — enter machine readings, get the failure probability, the recommendation at both thresholds, and a per-prediction SHAP explanation. (Render free tier — first load can take ~30-60s to wake up.)
 
